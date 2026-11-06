@@ -1,0 +1,58 @@
+:root {
+  --ink: #1e392f;
+  --paper: #faf6e9;
+  --rust: #983c24;
+  --line: #b4b9a9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0 auto;
+  width: min(90%, 72rem);
+  background: var(--paper);
+  color: var(--ink);
+  font: 1rem/1.55 system-ui, sans-serif;
+}
+a { color: inherit; text-underline-offset: .22em; }
+a:hover { color: var(--rust); }
+a:focus-visible { outline: 3px solid #005b95; outline-offset: 4px; }
+.skip { position: absolute; left: -100vw; }
+.skip:focus { left: 1rem; top: 1rem; background: white; padding: .5rem; }
+header, footer, nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+header, footer { padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+.brand, h1, h2, h3 { font-family: Georgia, serif; }
+.brand { font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+.hero { display: grid; gap: 2rem; align-items: center; padding: 3rem 0; }
+h1 { margin: 0; font-size: clamp(3rem, 6.5vw, 6rem); line-height: .98; }
+h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 0 0 1rem; }
+h3 { font-size: 1.35rem; margin: .45rem 0; }
+.hero p { max-width: 37rem; }
+.button {
+  display: inline-block;
+  margin-top: .4rem;
+  padding: .7rem 1.2rem;
+  background: var(--ink);
+  color: white;
+  text-decoration: none;
+}
+.button:hover { background: var(--rust); color: white; }
+figure { margin: 0; }
+img { display: block; width: 100%; height: auto; }
+figcaption, .way { font-size: .9rem; }
+figcaption { margin-top: .35rem; }
+.stops { display: grid; gap: 1.6rem; padding: 0; list-style-position: inside; }
+.stops li { border-top: 2px solid var(--ink); padding-top: .75rem; }
+.stops li::marker { color: var(--rust); font-weight: bold; }
+article p { margin: .5rem 0; }
+.way { color: var(--rust); }
+aside { margin: 2.5rem 0; padding: 1.5rem; background: #e4ebdf; }
+footer { border-top: 1px solid var(--line); border-bottom: 0; }
+@media (min-width: 48rem) {
+  .hero { grid-template-columns: 1fr 1fr; }
+  .stops { grid-template-columns: repeat(3, 1fr); }
+}
